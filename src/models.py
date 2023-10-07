@@ -28,6 +28,7 @@ class FavoritePlanet(Base):
     user_id = Column(Integer, ForeignKey('user.id'))
     planet_id = Column(Integer, ForeignKey('planet.id'))
     user = relationship(User)
+    planet = relationship(planet)
 
     def to_dict(self):
         return {}
@@ -49,6 +50,7 @@ class FavoriteCharacter(Base):
     user_id = Column(Integer, ForeignKey('user.id'))
     character_id = Column(Integer, ForeignKey('character.id'))
     user = relationship(User)
+    character = relationship(Character)
 
 
 class Character(Base):
@@ -69,6 +71,7 @@ class FavoriteStarship(Base):
     user_id = Column(Integer, ForeignKey('user.id'))
     starship_id = Column(Integer, ForeignKey('starship.id'))
     user = relationship(User)
+    starship = relationship(Starship)
 
 
 class Starship(Base):
